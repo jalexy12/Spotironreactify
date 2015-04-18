@@ -54,7 +54,9 @@ var Album = React.createClass({
 	    'row': true,
 	    'tracks': true			
 	  });
+
 		var album = this.props.data;
+		var modalHeader = "" + album.name + " by " + this.state.artists.name
 		return(
 			<div className="albumContainer">
 				<div className="col-sm-4 text-center singleAlbum">
@@ -66,7 +68,7 @@ var Album = React.createClass({
 				</div><br />
 				<ExampleModal ref="modal"
 			        show={false}
-			        header="Example Modal"
+			        header={modalHeader}
 			        buttons={buttons}>
 				       <TrackList tracks={this.state.tracks} showing={true}/>
       			</ExampleModal>
