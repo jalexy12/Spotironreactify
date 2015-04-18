@@ -1,1 +1,6 @@
-$('.modal').modal(options)
+var options = {
+	keyboard: true,
+}
+
+$('.js-modal').modal();
+

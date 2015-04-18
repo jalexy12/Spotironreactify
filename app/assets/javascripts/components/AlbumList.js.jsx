@@ -3,12 +3,23 @@ var BASEURL = 'https://api.spotify.com/v1/search?type=album&query=';
 
 
 var AlbumList = React.createClass({
+
 	getAlbums: function(){
+  		$.get(BASEURL + "comeback kid", this.handleAlbums);
+	},
+	handleAlbums: function(response){
+		this.setState({
+			data: response.albums.items
+		})
+	},
+	getTracks: function(){
 		$.ajax({
-	      url: BASEURL + "comeback kid",
+	      url: this.state.data.href,
 	      success: function(data) {
-	      	  this.setState({data: data.albums.items});
-	      	  console.log(this.state.data)
+      	    this.setState({
+      	  	  artists: data.artists,
+      	  	  tracks: data.tracks.items
+      	 	 });
 	      	}.bind(this),
 	      error: function(xhr, status, err) {
 	      	  console.error(this.props.url, status, err.toString());
@@ -20,7 +31,6 @@ var AlbumList = React.createClass({
 		return({
 			data: [],
 		})
-		console.log(data)
 	},
 
 	componentDidMount: function(){
@@ -28,14 +38,17 @@ var AlbumList = React.createClass({
 	},
 
 	render: function(){
-		var stuff = this.state.data;
-		albumList = stuff.map(function (album){
+		console.log(this.state.data)
+		var albumList = this.state.data.map(function (album){
 			return (
-				<div><Album images={album.images} name={album.name} release={album.release} /></ div>
+				<div><Album data={album} link={album.href} /></ div>
 				)
 		})
 		return(
-			<div> {albumList} </div>
+			<div> 
+			  <div className="searchRow col-sm-4 col-sm-offset-5"><SearchBar /></div>
+			  <div className="albumsRow row">{albumList}</div>
+			</div>
 			)
 	}
 
