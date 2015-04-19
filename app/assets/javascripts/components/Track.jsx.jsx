@@ -14,18 +14,25 @@ var Track = React.createClass({
 
 	  this.state.isPlaying ? audio.pause() : audio.play()
 		this.setState({
-			isPlaying: playing
+			isPlaying: playing,
 		})
 
-
 	},
+	getCurrentTime: function(){
+	  var audio = React.findDOMNode(this.refs.audio);
+	  var currentTime = audio.currentTime;
 
+	  this.setState({
+	  	currentTime: currentTime
+	  })
+	},
 	render: function(){
 		var buttonStyles = cx({
 			'fa': true,
 			'fa-play': !this.state.isPlaying,
 			'fa-pause': this.state.isPlaying
 		})
+
 		return(
 			<div>
 			  <audio className="trackPlayer" ref="audio" src={this.props.data.preview_url}></audio>
@@ -35,7 +42,7 @@ var Track = React.createClass({
 				 <div className="col-sm-1 playButton"><i onClick={this.playTrack} className={buttonStyles}></i></div> 
 				<div className="col-sm-4 trackProgress">
 				     <div className="progress">
-		  				<div className="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+		  				<div className="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="30">
 		  				</div>
 					  </div>
 				  </div>

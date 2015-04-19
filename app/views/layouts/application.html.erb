@@ -15,7 +15,7 @@
 	     	<%= form_tag('/search', method: "post") do %>
 	         <%= label_tag(:q, "Search for albums:") %>
 	  		 <%= text_field_tag(:q) %>
-	  		 <%= submit_tag("Search") %>
+	  		 <%= submit_tag("Search", class: "searchButton") %>
 		    <% end %> 
 		  </div>
      </div>

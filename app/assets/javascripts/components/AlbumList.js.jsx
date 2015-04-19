@@ -12,20 +12,6 @@ var AlbumList = React.createClass({
 			data: response.albums.items
 		})
 	},
-	getTracks: function(){
-		$.ajax({
-	      url: this.state.data.href,
-	      success: function(data) {
-      	    this.setState({
-      	  	  artists: data.artists,
-      	  	  tracks: data.tracks.items
-      	 	 });
-	      	}.bind(this),
-	      error: function(xhr, status, err) {
-	      	  console.error(this.props.url, status, err.toString());
-	     	 }.bind(this)
-    	});
-	},
 
 	getInitialState: function(){
 		return({
@@ -38,10 +24,10 @@ var AlbumList = React.createClass({
 	},
 
 	render: function(){
-		console.log(this.state.data)
+		var albums = this.state.data;
 		var albumList = this.state.data.map(function (album){
 			return (
-				<div><Album data={album} link={album.href} /></ div>
+				<div><Album data={album} albums={albums} link={album.href} /></ div>
 				)
 		})
 		return(

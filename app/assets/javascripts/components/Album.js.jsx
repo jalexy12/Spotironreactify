@@ -36,24 +36,16 @@ var Album = React.createClass({
 	handleDoingNothing: function() {
 	    this.handleLog("Remember I said I'd do nothing? ...I lied!", 'danger')
 	  },
-	 
-	// handleLog: function(message, type) {
-	//     this.setState({
-	//       logs: [{ type: type
-	//              , time: new Date().toLocaleTimeString()
-	//              , message: message}].concat(this.state.logs.slice(0, 3))
-	//     })
-	//   },
 
 	render: function(){
 	 var buttons = [
         {type: 'danger',  text: 'Hide Modal',  handler: this.handleExternalHide}
-      , {type: 'primary', text: 'Do Nothing', handler: this.handleDoingNothing}
+      , {type: 'primary', text: 'Next Album', handler: this.handleDoingNothing}
       ]
 	  var classes = cx({
 	    'text-center': true,
 	    'row': true,
-	    'tracks': true			
+	    'tracks': true		
 	  });
 
 		var album = this.props.data;

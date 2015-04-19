@@ -21,3 +21,15 @@ body{
 .search{
 	margin-top: 2%;
 }
+
+.navbar {
+   background-color: rgba(0,0,0,0.8);
+   color: white;
+}
+.navbar input{
+	color: black;
+}
+.search.searchButton{
+	background-color: transparent;
+	color: white;
+}
