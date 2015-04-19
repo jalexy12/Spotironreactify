@@ -35,4 +35,32 @@
 .icon-play-circle{
 	font-size: 24;
 }
+.jumbohome{
+	height: 100vh;
+    width: 100%;
+    background-image: asset-url("jumboimage.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center; 
+}
+.jumbocover{
+	height: 100vh;
+	background-position: center;
+	// background-size: 100% 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	z-index: 1;
+}
+.wrapper{
+	position: absolute;
+	top: 40vh;
+	left: 35vh;
+	color: white;
+	font-size: 4em;
+}
+.subheading{
+	top: 50vh;
+	left: 40vh;
+	font-size: 4vh;
+	color: white;
 
+}

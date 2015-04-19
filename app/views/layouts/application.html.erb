@@ -7,6 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+     <div class="col-sm-4"></div>
+     <div class="col-sm-4">
+	     <div class="search">
+	     	<%= form_tag('/search', method: "post") do %>
+	         <%= label_tag(:q, "Search for albums:") %>
+	  		 <%= text_field_tag(:q) %>
+	  		 <%= submit_tag("Search") %>
+		    <% end %> 
+		  </div>
+     </div>
+     <div class="col-sm-4"></div>
+  </div>
+</nav>
 <div class="container-fluid">
   <%= yield %>
 </div>

@@ -5,7 +5,7 @@ var BASEURL = 'https://api.spotify.com/v1/search?type=album&query=';
 var AlbumList = React.createClass({
 
 	getAlbums: function(){
-  		$.get(BASEURL + "comeback kid", this.handleAlbums);
+  		$.get(BASEURL + this.props.search, this.handleAlbums);
 	},
 	handleAlbums: function(response){
 		this.setState({
@@ -46,7 +46,6 @@ var AlbumList = React.createClass({
 		})
 		return(
 			<div> 
-			  <div className="searchRow col-sm-4 col-sm-offset-5"><SearchBar /></div>
 			  <div className="albumsRow row">{albumList}</div>
 			</div>
 			)

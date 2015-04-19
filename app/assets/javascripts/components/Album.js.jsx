@@ -61,7 +61,7 @@ var Album = React.createClass({
 		return(
 			<div className="albumContainer">
 				<div className="col-sm-4 text-center singleAlbum">
-					<div className="row artistName">{this.state.artists.name}</div>
+					<div className="row artistName"><h4>{this.state.artists.name}</h4></div>
 					<div className="row albumName">{album.name}</div>
 					<div className="row">{album.release}</div>
 					<div className="row"><img className="artistimage" src={album.images[0].url} /></div>
