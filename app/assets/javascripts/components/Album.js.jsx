@@ -1,4 +1,5 @@
- var cx = React.addons.classSet;
+var cx = React.addons.classSet;
+
 var Album = React.createClass({
 	getInitialState: function(){
 		return({
