@@ -1,6 +1,4 @@
-
 var BASEURL = 'https://api.spotify.com/v1/search?type=album&query=';
-
 
 var AlbumList = React.createClass({
 

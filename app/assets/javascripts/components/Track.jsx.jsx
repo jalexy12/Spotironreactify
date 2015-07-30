@@ -66,7 +66,7 @@ var TrackList = React.createClass({
 		var trackNodes = this.props.tracks.map(function(track, index){
 			return <li className="row">
 					  <div className="col-sm-2 trackIndex">
-					    {index}.
+					    {index + 1}.
 					  </div>
 					  <Track data={track} />
 				   </li>
