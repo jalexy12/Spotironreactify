@@ -1,5 +1,5 @@
 Simple spotify music search built using the spotify API, rails, and react.
 
-* git clone
-* cd Spotironreactify
+** git clone
+** cd Spotironreactify
 ** bundle install
